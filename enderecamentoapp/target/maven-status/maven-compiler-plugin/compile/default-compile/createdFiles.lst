@@ -1,0 +1,5 @@
+com\osw\enderecamento\rest\JaxRsActivator.class
+com\osw\enderecamento\util\EnderecamentoParseUtil.class
+com\osw\enderecamento\rest\EnderecamentoResourceRESTService.class
+com\osw\enderecamento\service\EnderecamentoService.class
+com\osw\enderecamento\model\Enderecamento.class

@@ -1,0 +1,185 @@
+.form-control{
+    background: transparent;
+}
+
+
+/* OSW - INPUT - INICIO */
+
+osw input[data-osw="input_text"] {
+	width: 100%;
+	border: 1px solid #ccc;
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	padding: 17px 0px 7px 5px;
+	outline: 0;
+	margin-bottom: 10px;
+	text-overflow: ellipsis; 
+	
+	-webkit-transition: 0.15s all ease;
+    transition: 0.15s all ease;
+}
+
+osw input[data-osw="input_text"]:hover {
+	padding: 25px 0px 15px 5px;
+
+	border-color: #66afe9;
+    outline: 0;
+	
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+	
+	-webkit-transition: 0.15s all ease;
+    transition: 0.15s all ease;
+}
+
+osw input[data-osw="input_text"]:disabled {
+	background: transparent;
+}
+
+osw input[data-osw="input_text"]:not([data-osw_value='']):disabled {
+    padding: 25px 0px 15px 5px;
+	z-index: 2;
+    border: 1px solid #007832;
+		
+	-webkit-transition: 0.15s all ease;
+    transition: 0.15s all ease;
+}
+
+
+osw input[data-osw="input_text"]:not([data-osw_value='']):valid {
+	z-index: 2;
+    border: 1px solid #007832;
+	height: 100%;
+		
+	-webkit-transition: 0.15s all ease;
+    transition: 0.15s all ease;
+}
+
+osw input[data-osw="input_text"]:focus {
+    padding: 25px 0px 15px 5px;
+    height: 120%;
+		
+	-webkit-transition: 0.15s all ease;
+    transition: 0.15s all ease;
+}
+
+osw input[data-osw="input_text"] + label {
+    position: absolute;
+	color: #999;
+	padding: 7px 5px;
+	font-weight: normal;
+    height: 100%;
+	top: 0;
+	left: 17px;
+	width: auto;
+	z-index: 3;
+    -webkit-transition: 0.15s all ease;
+    transition: 0.15s all ease;
+}
+
+osw input[data-osw="input_text"]:hover + label{
+	font-size: 120%;
+	color: #66afe9;
+	-webkit-transition: 0.15s all ease;
+    transition: 0.15s all ease;
+}
+
+osw input[data-osw="input_text"]:focus + label {
+	font-size: 70%;
+	color: #66afe9;
+	padding-top: 5px;
+	-webkit-transition: 0.15s all ease;
+    transition: 0.15s all ease;
+}
+
+osw input[data-osw="input_text"]:not([data-osw_value='']):valid + label {
+    color: #007832;
+    font-size: 70%;
+	padding-top: 5px;	
+	-webkit-transition: 0.15s all ease;
+    transition: 0.15s all ease;
+}
+
+osw input[data-osw="input_text"]:invalid + label {
+    color: red;
+}
+
+osw input[data-osw="input_text"]:not([data-osw_value='']):disabled + label {
+    color: #66afe9;
+    font-size: 70%;
+	padding-top: 5px;
+}
+
+
+/* OSW - INPUT - FIM */
+/* -------------------------------------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------------------------------------- */
+/* OSW - OBRIGATORIO - INICIO */
+
+osw .required-icon {
+	z-index: 1;
+	position: relative; 
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #E8E8E8;
+    border-color: #E8E8E8;
+    padding: 0.5em 0.8em;
+    color: rgba(0, 0, 0, 0.65);
+    text-transform: uppercase;
+    font-weight: normal;
+    border-radius: 0.325em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: background 0.1s linear;
+    -moz-transition: background 0.1s linear;
+    transition: background 0.1s linear;
+    font-size: 75%;
+}
+    
+osw .required-icon {
+    background-color: transparent;
+    position: absolute;
+    top: 0em;
+    right: 1.4em;
+    margin: 0em;
+    width: 30px;
+    height: 30px;
+    padding: 0em;
+    text-align: center;
+    -webkit-transition: color 0.2s ease;
+    -moz-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+}
+
+osw .required-icon:after {
+    position: absolute;
+    content: "";
+    right: 1px;
+    top: 1px;
+    z-index: -1;
+    width: 0em;
+    height: 0em;
+    border-top: 0em solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 0em solid transparent;
+    border-right-color: inherit;
+    -webkit-transition: border-color 0.2s ease;
+    -moz-transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease;
+}
+
+osw .required-icon .text {
+	color: #B80000;
+	font-size: 26px;
+	margin: -3px 0px 0 12px;
+}
+
+/* OSW - OBRIGATORIO - FIM */
+/* -------------------------------------------------------------------------------------------------------- */
+

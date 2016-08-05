@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div class="container">
+	
+	<!-- Search Form -->
+	<form id="reg" ng-submit="buscar()">
+ 		<h2>Buscar Endere&ccedil;o ou CEP</h2>
+		<div class="row">
+			<div class="col-md-10">
+				<osw>
+					<div class="form-group">
+						<input id="enderecamento" name="enderecamento" ng-model="enderecamento" 
+							type="text" class="form-control" title="Informe o CEP ou o Endere&ccedil;o" required
+							onchange="this.setAttribute('data-osw_value', this.value);"
+							onkeyup="this.setAttribute('data-osw_value', this.value);"
+							data-osw_value="" data-osw="input_text">
+						<label for="enderecamento">CEP ou Endere&ccedil;o</label>
+						<div class="required-icon"><div class="text">*</div></div>
+					</div>
+				</osw>
+			</div>
+			<div class="col-md-2">
+				<div class="form-group">
+					<button type="submit" class="btn btn-success pull-right">
+						<span class="fa fa-search"></span> Pesquisar
+					</button>
+				</div>
+			</div>
+		</div>
+	</form>
+	
+	<!-- Result Message Found -->
+	<div ng-show="enderecamentos.length > 0">
+		<em>Resultados encontrados: <strong>{{enderecamentos.length}} </strong></em>
+		<span ng-show="enderecamentos.length > 1" class="fa fa-lightbulb-o"
+		 	style="color: #0000ff; cursor: pointer; margin-left: 4px;" ng-click="showDica = true"></span>
+	</div>
+	
+	<!-- Ordination Message -->
+	<div ng-show="showDica" class="alert alert-info">
+		<button class="close" ng-click="showDica = false" type="button">
+			<span class="fa fa-times"></span>
+		</button>
+		<strong><span class="fa fa-lightbulb-o"></span> Dica</strong><br>
+		Voc&ecirc; pode ordenar o resultado da sua pesquisa, basta clique no cabe&ccedil;alho das colunas.
+	</div>
+	
+	<!-- Error Message -->
+	<div ng-show="errorMessages" class="alert alert-danger">
+		<button class="close" ng-click="errorMessages = false" type="button">
+			<span class="fa fa-times"></span>
+		</button>
+		<strong><span class="fa fa-exclamation-circle"></span> Erro</strong><br>
+		Erro ao realizar a consulta, por favor tente mais tarde.
+	</div>
+
+	<!-- Results Table -->	
+	<div class="row" ng-show="enderecamentos.length > 0">
+		<div class="col-md-12 table-div">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>
+							<a ng-click="sortType = 'logradouro'; sortReverse = !sortReverse"
+								style="color: black; cursor: pointer;">Logradouro
+								<span ng-show="sortType == 'logradouro' && !sortReverse" class="fa fa-caret-down"></span>
+								<span ng-show="sortType == 'logradouro' && sortReverse" class="fa fa-caret-up"></span>
+							</a>
+						</th>
+						<th>
+							<a ng-click="sortType = 'bairro'; sortReverse = !sortReverse"
+								style="color: black; cursor: pointer;">Bairro
+								<span ng-show="sortType == 'bairro' && !sortReverse" class="fa fa-caret-down"></span>
+								<span ng-show="sortType == 'bairro' && sortReverse" class="fa fa-caret-up"></span>
+							</a>
+						</th>
+						<th>
+							<a ng-click="sortType = 'cidade'; sortReverse = !sortReverse"
+								style="color: black; cursor: pointer;">Cidade
+								<span ng-show="sortType == 'cidade' && !sortReverse" class="fa fa-caret-down"></span>
+								<span ng-show="sortType == 'cidade' && sortReverse" class="fa fa-caret-up"></span>
+							</a>
+						</th>
+						<th>
+							<a ng-click="sortType = 'cep'; sortReverse = !sortReverse"
+								style="color: black; cursor: pointer;">CEP
+								<span ng-show="sortType == 'cep' && !sortReverse" class="fa fa-caret-down"></span>
+								<span ng-show="sortType == 'cep' && sortReverse" class="fa fa-caret-up"></span>
+							</a>
+						</th>
+					</tr>
+					
+				</thead>
+				<tbody>
+					<tr ng-repeat="enderecamento in enderecamentos | orderBy:sortType:sortReverse">
+						<td ng-bind="enderecamento.logradouro"></td>
+						<td ng-bind="enderecamento.bairro"></td>
+						<td ng-bind="enderecamento.cidade"></td>
+						<td ng-bind="enderecamento.cep"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+	<!-- Modal Zero Result -->
+	<div id="modal_result_zero" class="modal fade" tabindex="-1" role="dialog">
+  		<div class="modal-dialog">
+			<div class="modal-content">
+		  		<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<div class="modal-title">
+						<h4>Resultado da pesquisa</h4>
+					</div>
+			  	</div>
+			  	<div class="modal-body">
+		  			<em>Nenhum resultado para buscar por: <strong>{{enderecamento}}</strong></em>
+			  	</div>
+			  	<div class="modal-footer">
+			  		<button type="button" class="btn btn-default pull-right" 
+			  			data-dismiss="modal" aria-label="Close">Fechar
+			  		</button>
+			  	</div>
+			</div>
+	  	</div>
+	</div>
+	
+	
+</div>
