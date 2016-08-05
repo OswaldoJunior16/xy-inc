@@ -43,7 +43,7 @@ Para utilizar a aplicação
 
 4. Acesso a aplicação
 
-	Acesse a aplicação através de um navegador no seguinte endereço: http://localhost:8080/enderecamentoapp/
+	Acesse a aplicação através de um navegador no seguinte endereço: http://localhost:8080/webapp/
 	No desenvolvimento do front-end foi utilizado o Bootstrap que é um framework possui uma diversidade de componentes (plugins) em JavaScript (jQuery) que auxilia bastante na criação de sites com tecnologia mobile (responsivo).
 	Com a aplicação front-end é possível:
 		- Realizar consulta através do logradouro;
