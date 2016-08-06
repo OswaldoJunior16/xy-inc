@@ -67,17 +67,17 @@ public class EnderecamentoServiceTest {
 	@Test
 	public void testFindCepCompleto() {
 		// Given
-		String cep = "69027060";
+		String cep = "69035090";
 		
 		// When
 		List<LinkedHashMap<String, String>> enderecamentos = buscaEnderecoCEP(cep);
 		
 		// Then
 		assertTrue(enderecamentos.size() > 0);
-		assertEquals("Rua Virgílio Ramos ", enderecamentos.get(0).getOrDefault("logradouro", ""));
-		assertEquals("São Raimundo ", enderecamentos.get(0).getOrDefault("bairro", ""));
+		assertEquals("Avenida Padre Agostinho Caballero Martin ", enderecamentos.get(0).getOrDefault("logradouro", ""));
+		assertEquals("Compensa ", enderecamentos.get(0).getOrDefault("bairro", ""));
 		assertEquals("Manaus/AM", enderecamentos.get(0).getOrDefault("cidade", ""));
-		assertEquals("69027-060", enderecamentos.get(0).getOrDefault("cep", ""));
+		assertEquals("69035-090", enderecamentos.get(0).getOrDefault("cep", ""));
 	}
 	
 	/**
@@ -103,16 +103,17 @@ public class EnderecamentoServiceTest {
     @Test
     public void testFindLogradouroCompleto() throws Exception {
     	// Given
-		String endereco = "Rua Antônio Virgílio Ramos";
+		String endereco = "Avenida Padre Agostinho Caballero Martin";
     			
 		// When
 		List<LinkedHashMap<String, String>> enderecamentos = buscaEnderecoCEP(endereco);
 		
 		// Then
         assertNotNull(enderecamentos);
-		assertEquals("Rua Antônio Virgílio Ramos ", enderecamentos.get(0).getOrDefault("logradouro", ""));
-		assertEquals("Caçapava/SP", enderecamentos.get(0).getOrDefault("cidade", ""));
-        assertEquals("12284-500", enderecamentos.get(0).getOrDefault("cep", ""));
+		assertEquals("Avenida Padre Agostinho Caballero Martin ", enderecamentos.get(0).getOrDefault("logradouro", ""));
+		assertEquals("Compensa ", enderecamentos.get(0).getOrDefault("bairro", ""));
+		assertEquals("Manaus/AM", enderecamentos.get(0).getOrDefault("cidade", ""));
+		assertEquals("69035-090", enderecamentos.get(0).getOrDefault("cep", ""));
     }
     
     /**
@@ -121,14 +122,14 @@ public class EnderecamentoServiceTest {
     @Test
     public void testFindLogradouroParcial() throws Exception {
     	// Given
-		String endereco = "Rua Virgílio Ramos";
-    	    			
+		String endereco = "Avenida Padre Agostinho";
+		int qtdeResult = 3;    			
 		// When
 		List<LinkedHashMap<String, String>> enderecamentos = buscaEnderecoCEP(endereco);
     			
 		// Then
         assertNotNull(enderecamentos );
-        assertTrue(enderecamentos.size() == 7);
+        assertTrue(enderecamentos.size() == qtdeResult);
     }
     
     /**
