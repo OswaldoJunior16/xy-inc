@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: com.osw.enderecamento.test.EnderecamentoServiceTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 5.598 sec <<< FAILURE!
-testFindCepCompleto(com.osw.enderecamento.test.EnderecamentoServiceTest)  Time elapsed: 0.319 sec  <<< FAILURE!
-org.junit.ComparisonFailure: expected:<Rua Virg[ílio Ramos] > but was:<Rua Virg[Ã­lio RamosÂ] >
+Tests run: 7, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 22.009 sec <<< FAILURE!
+testFindLogradouroCompleto(com.osw.enderecamento.test.EnderecamentoServiceTest)  Time elapsed: 2.484 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<...nho Caballero Martin[] > but was:<...nho Caballero Martin[Â] >
 	at org.junit.Assert.assertEquals(Assert.java:125)
 	at org.junit.Assert.assertEquals(Assert.java:147)
-	at com.osw.enderecamento.test.EnderecamentoServiceTest.testFindCepCompleto(EnderecamentoServiceTest.java:77)
+	at com.osw.enderecamento.test.EnderecamentoServiceTest.testFindLogradouroCompleto(EnderecamentoServiceTest.java:113)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -37,11 +37,11 @@ org.junit.ComparisonFailure: expected:<Rua Virg[ílio Ramos] > but was:<Rua Virg[
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 
-testFindLogradouroCompleto(com.osw.enderecamento.test.EnderecamentoServiceTest)  Time elapsed: 0.272 sec  <<< FAILURE!
-org.junit.ComparisonFailure: expected:<Rua Ant[ônio Virgílio Ramos] > but was:<Rua Ant[Ã´nio VirgÃ­lio RamosÂ] >
+testFindCepCompleto(com.osw.enderecamento.test.EnderecamentoServiceTest)  Time elapsed: 1.807 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<...nho Caballero Martin[] > but was:<...nho Caballero Martin[Â] >
 	at org.junit.Assert.assertEquals(Assert.java:125)
 	at org.junit.Assert.assertEquals(Assert.java:147)
-	at com.osw.enderecamento.test.EnderecamentoServiceTest.testFindLogradouroCompleto(EnderecamentoServiceTest.java:113)
+	at com.osw.enderecamento.test.EnderecamentoServiceTest.testFindCepCompleto(EnderecamentoServiceTest.java:77)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

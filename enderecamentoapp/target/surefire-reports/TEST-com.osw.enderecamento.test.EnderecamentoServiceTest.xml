@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="7" failures="2" name="com.osw.enderecamento.test.EnderecamentoServiceTest" time="4.631" errors="0" skipped="0">
+<testsuite tests="7" failures="2" name="com.osw.enderecamento.test.EnderecamentoServiceTest" time="21.098" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_05\jre\bin"/>
@@ -63,15 +63,12 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.osw.enderecamento.test.EnderecamentoServiceTest" name="testLogradouroInexistente" time="2.653"/>
-  <testcase classname="com.osw.enderecamento.test.EnderecamentoServiceTest" name="testFindLogradouroParcial" time="0.323"/>
-  <testcase classname="com.osw.enderecamento.test.EnderecamentoServiceTest" name="testCepInexistente" time="0.251"/>
-  <testcase classname="com.osw.enderecamento.test.EnderecamentoServiceTest" name="testAcessoEnderecamento" time="0.333"/>
-  <testcase classname="com.osw.enderecamento.test.EnderecamentoServiceTest" name="testFindCepCompleto" time="0.319">
-    <failure message="expected:&lt;Rua Virg[ílio Ramos] &gt; but was:&lt;Rua Virg[Ã­lio RamosÂ] &gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;Rua Virg[ílio Ramos] &gt; but was:&lt;Rua Virg[Ã­lio RamosÂ] &gt;
+  <testcase classname="com.osw.enderecamento.test.EnderecamentoServiceTest" name="testFindCepParcial" time="6.354"/>
+  <testcase classname="com.osw.enderecamento.test.EnderecamentoServiceTest" name="testFindLogradouroCompleto" time="2.484">
+    <failure message="expected:&lt;...nho Caballero Martin[] &gt; but was:&lt;...nho Caballero Martin[Â] &gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;...nho Caballero Martin[] &gt; but was:&lt;...nho Caballero Martin[Â] &gt;
 	at org.junit.Assert.assertEquals(Assert.java:125)
 	at org.junit.Assert.assertEquals(Assert.java:147)
-	at com.osw.enderecamento.test.EnderecamentoServiceTest.testFindCepCompleto(EnderecamentoServiceTest.java:77)
+	at com.osw.enderecamento.test.EnderecamentoServiceTest.testFindLogradouroCompleto(EnderecamentoServiceTest.java:113)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -103,12 +100,15 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </failure>
   </testcase>
-  <testcase classname="com.osw.enderecamento.test.EnderecamentoServiceTest" name="testFindCepParcial" time="0.48"/>
-  <testcase classname="com.osw.enderecamento.test.EnderecamentoServiceTest" name="testFindLogradouroCompleto" time="0.272">
-    <failure message="expected:&lt;Rua Ant[ônio Virgílio Ramos] &gt; but was:&lt;Rua Ant[Ã´nio VirgÃ­lio RamosÂ] &gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;Rua Ant[ônio Virgílio Ramos] &gt; but was:&lt;Rua Ant[Ã´nio VirgÃ­lio RamosÂ] &gt;
+  <testcase classname="com.osw.enderecamento.test.EnderecamentoServiceTest" name="testFindLogradouroParcial" time="2.545"/>
+  <testcase classname="com.osw.enderecamento.test.EnderecamentoServiceTest" name="testLogradouroInexistente" time="2.314"/>
+  <testcase classname="com.osw.enderecamento.test.EnderecamentoServiceTest" name="testCepInexistente" time="2.967"/>
+  <testcase classname="com.osw.enderecamento.test.EnderecamentoServiceTest" name="testAcessoEnderecamento" time="2.627"/>
+  <testcase classname="com.osw.enderecamento.test.EnderecamentoServiceTest" name="testFindCepCompleto" time="1.807">
+    <failure message="expected:&lt;...nho Caballero Martin[] &gt; but was:&lt;...nho Caballero Martin[Â] &gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;...nho Caballero Martin[] &gt; but was:&lt;...nho Caballero Martin[Â] &gt;
 	at org.junit.Assert.assertEquals(Assert.java:125)
 	at org.junit.Assert.assertEquals(Assert.java:147)
-	at com.osw.enderecamento.test.EnderecamentoServiceTest.testFindLogradouroCompleto(EnderecamentoServiceTest.java:113)
+	at com.osw.enderecamento.test.EnderecamentoServiceTest.testFindCepCompleto(EnderecamentoServiceTest.java:77)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
