@@ -27,6 +27,7 @@ import java.util.List;
 import org.junit.Test;
 
 import com.jayway.restassured.RestAssured;
+import com.jayway.restassured.http.ContentType;
 
 /**
  * This is service test class
@@ -36,34 +37,35 @@ import com.jayway.restassured.RestAssured;
 public class EnderecamentoServiceTest {
 	
 	/**
-	 * Constructor
-	 */
+	* Constructor
+	*/
 	public EnderecamentoServiceTest() {
 		RestAssured.baseURI = "http://localhost:8080/enderecamentoapp/rest/buscaCepLogradouro";
 	}
 	
 	/**
-	 * Method to assist research
-	 * @param enderecoCEP
-	 * @return addresses
-	 */
+	* Method to assist research
+	* @param enderecoCEP
+	* @return addresses
+	*/
 	@SuppressWarnings("unchecked")
 	public List<LinkedHashMap<String, String>> buscaEnderecoCEP(String enderecoCEP){
-		List<LinkedHashMap<String, String>> enderecamentos = given().when().get("/" + enderecoCEP).as(List.class);
+		List<LinkedHashMap<String, String>> enderecamentos = given()
+				.when().contentType(ContentType.HTML).get("/" + enderecoCEP).as(List.class);
 		return enderecamentos;
 	}
 	
 	/**
-	 * Test access to the service
-	 */
+	* Test access to the service
+	*/
 	@Test
 	public void testAcessoEnderecamento() {
-		given().when().get("/38411449").then().statusCode(200);
+		given().when().contentType(ContentType.HTML).get("/38411449").then().statusCode(200);
 	}
 	
 	/**
-	 * Test the query stating the full zid code
-	 */
+	* Test the query stating the full zid code
+	*/
 	@Test
 	public void testFindCepCompleto() {
 		// Given
@@ -74,15 +76,15 @@ public class EnderecamentoServiceTest {
 		
 		// Then
 		assertTrue(enderecamentos.size() > 0);
-		assertEquals("Avenida Padre Agostinho Caballero Martin ", enderecamentos.get(0).getOrDefault("logradouro", ""));
-		assertEquals("Compensa ", enderecamentos.get(0).getOrDefault("bairro", ""));
+		assertEquals("Avenida Padre Agostinho Caballero Martin ", enderecamentos.get(0).getOrDefault("logradouro", ""));
+		assertEquals("Compensa ", enderecamentos.get(0).getOrDefault("bairro", ""));
 		assertEquals("Manaus/AM", enderecamentos.get(0).getOrDefault("cidade", ""));
 		assertEquals("69035-090", enderecamentos.get(0).getOrDefault("cep", ""));
 	}
 	
 	/**
-	 * Test the query stating the partial zid code
-	 */
+	* Test the query stating the partial zid code
+	*/
     @Test
     public void testFindCepParcial() throws Exception {
     	// Given
@@ -98,8 +100,8 @@ public class EnderecamentoServiceTest {
     }
     
     /**
-	 * Test the query stating the full Street
-	 */
+	* Test the query stating the full Street
+	*/
     @Test
     public void testFindLogradouroCompleto() throws Exception {
     	// Given
@@ -110,15 +112,15 @@ public class EnderecamentoServiceTest {
 		
 		// Then
         assertNotNull(enderecamentos);
-		assertEquals("Avenida Padre Agostinho Caballero Martin ", enderecamentos.get(0).getOrDefault("logradouro", ""));
-		assertEquals("Compensa ", enderecamentos.get(0).getOrDefault("bairro", ""));
+		assertEquals("Avenida Padre Agostinho Caballero Martin ", enderecamentos.get(0).getOrDefault("logradouro", ""));
+		assertEquals("Compensa ", enderecamentos.get(0).getOrDefault("bairro", ""));
 		assertEquals("Manaus/AM", enderecamentos.get(0).getOrDefault("cidade", ""));
 		assertEquals("69035-090", enderecamentos.get(0).getOrDefault("cep", ""));
     }
     
     /**
-	 * Test the query stating the partial Street
-	 */
+	* Test the query stating the partial Street
+	*/
     @Test
     public void testFindLogradouroParcial() throws Exception {
     	// Given
@@ -133,8 +135,8 @@ public class EnderecamentoServiceTest {
     }
     
     /**
-	 * Test the query stating nonexistent zip code
-	 */
+	* Test the query stating nonexistent zip code
+	*/
     @Test
     public void testCepInexistente() throws Exception {
     	// Given
@@ -150,17 +152,17 @@ public class EnderecamentoServiceTest {
     }
     
     /**
-	 * Test the query stating nonexistent Street
-	 */
+	* Test the query stating nonexistent Street
+	*/
     @Test
     public void testLogradouroInexistente() throws Exception {
     	// Given
 		String endereco = "Rua xyz";
 		int qtdeResult = 0;
-    	    			
+    	   			
 		// When
 		List<LinkedHashMap<String, String>> enderecamentos = buscaEnderecoCEP(endereco);
-    	    			
+    	   			
 		// Then
         assertNotNull(enderecamentos);
         assertTrue(enderecamentos.size() == qtdeResult);
