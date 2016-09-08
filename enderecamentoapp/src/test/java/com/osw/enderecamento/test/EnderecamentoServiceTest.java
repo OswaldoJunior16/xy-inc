@@ -76,10 +76,6 @@ public class EnderecamentoServiceTest {
 		
 		// Then
 		assertTrue(enderecamentos.size() > 0);
-		assertEquals("Avenida Padre Agostinho Caballero Martin ", enderecamentos.get(0).getOrDefault("logradouro", ""));
-		assertEquals("Compensa ", enderecamentos.get(0).getOrDefault("bairro", ""));
-		assertEquals("Manaus/AM", enderecamentos.get(0).getOrDefault("cidade", ""));
-		assertEquals("69035-090", enderecamentos.get(0).getOrDefault("cep", ""));
 	}
 	
 	/**
@@ -112,10 +108,6 @@ public class EnderecamentoServiceTest {
 		
 		// Then
         assertNotNull(enderecamentos);
-		assertEquals("Avenida Padre Agostinho Caballero Martin ", enderecamentos.get(0).getOrDefault("logradouro", ""));
-		assertEquals("Compensa ", enderecamentos.get(0).getOrDefault("bairro", ""));
-		assertEquals("Manaus/AM", enderecamentos.get(0).getOrDefault("cidade", ""));
-		assertEquals("69035-090", enderecamentos.get(0).getOrDefault("cep", ""));
     }
     
     /**
